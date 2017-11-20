@@ -15,7 +15,6 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--memory", 4096, "--cpus", 2, "--ioapic", "on"]
   end
 
-  config.vm.provision :file, source: "vagrant/nginx/app.conf", destination: "app.conf"
   config.vm.provision :file, source: "vagrant/nginx/nginx.conf", destination: "nginx.conf"
   config.vm.provision :file, source: "vagrant/mysql/my.cnf", destination: "my.cnf"
   config.vm.provision :shell, path: "vagrant/bootstrap.sh"

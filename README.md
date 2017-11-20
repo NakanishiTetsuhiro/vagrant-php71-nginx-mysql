@@ -1,13 +1,12 @@
-# vagrant-php7-nginx-mysql-redis
+# vagrant-php71-nginx-mysql
 
 ## tools
 
 * nginx
 * php7.1
-* php7.1-fpm
+* php-fpm
 * composer
 * mysql5.7
-* redis
 
 ## tips
 ### Vagrant
@@ -15,7 +14,6 @@
 
 ### nginx
 * port: 80
-* connect with php7.1-fpm via unix socket
 
 ### php-fpm
 * xdebug port: 9001
@@ -25,5 +23,8 @@
 * encoding: utf-8mb4
 * port: 3306
 
-### redis
-* port: 6397
+## Special thanks!
+
+I've referred to this repo
+
+https://github.com/saboyutaka/vagrant-php7-nginx-mysql-redis

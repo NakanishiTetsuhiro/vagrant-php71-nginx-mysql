@@ -69,14 +69,14 @@ yum remove -y mariadb-libs
 yum localinstall -y http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
 yum install -y mysql mysql-devel mysql-server mysql-utilities
 # mysqld --user=mysql --initialize
-cp -a /etc/my.cnf /etc/my.cnf.orig
+mv /etc/my.cnf /etc/my.cnf.orig
 mv /home/vagrant/my.cnf /etc/my.cnf
 systemctl start mysqld.service
 systemctl enable mysqld.service
 
 # Install nginx
 yum install -y nginx
-cp -a /etc/nginx/nginx.conf /etc/nginx/nginx.conf.orig
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.orig
 mv /home/vagrant/nginx.conf /etc/nginx/nginx.conf
 systemctl start nginx
 systemctl enable nginx

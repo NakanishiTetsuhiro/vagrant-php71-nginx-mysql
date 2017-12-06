@@ -17,5 +17,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :file, source: "vagrant/nginx/nginx.conf", destination: "nginx.conf"
   config.vm.provision :file, source: "vagrant/mysql/my.cnf", destination: "my.cnf"
+  config.vm.provision :file, source: "vagrant/php-fpm/www.conf", destination: "www.conf"
   config.vm.provision :shell, path: "vagrant/bootstrap.sh"
 end

@@ -61,8 +61,8 @@ mv composer.phar /usr/local/bin/composer
 chmod +x /usr/local/bin/composer
 
 # Setting for php-fpm
-systemctl start php-fpm
-systemctl enable php-fpm
+mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.conf.orig
+mv /home/vagrant/www.conf /etc/php-fpm.d/www.conf
 
 # Install MySQL
 yum remove -y mariadb-libs
@@ -81,3 +81,6 @@ mv /home/vagrant/nginx.conf /etc/nginx/nginx.conf
 systemctl start nginx
 systemctl enable nginx
 
+# Start php-fpm
+systemctl start php-fpm
+systemctl enable php-fpm
